@@ -27,7 +27,10 @@ const Login = () => {
   return (
     <>
       <div style={{ width: 300, margin: '100px auto', padding: 30, background: '#fff', borderRadius: 8, boxShadow: '0 0 10px #ccc' }}>
-  <h2 style={{ color: '#555', textAlign: 'center', width: '100%', letterSpacing: '0.1px' }}>Central de Agentes</h2>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', fontWeight: 700, color: '#9e1b32', letterSpacing: '-1px', marginBottom: 10 }}>
+          Logo Empresa
+        </div>
+        <h2 style={{ color: '#555', textAlign: 'center', width: '100%', letterSpacing: '0.1px' }}>Central de Agentes</h2>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
@@ -40,7 +43,7 @@ const Login = () => {
               maxWidth: '100%',
               boxSizing: 'border-box',
               padding: 10,
-              margin: '10px 0',
+              marginBottom: 12,
               border: '1px solid #ccc',
               borderRadius: 4,
               outline: 'none',
@@ -60,7 +63,7 @@ const Login = () => {
               maxWidth: '100%',
               boxSizing: 'border-box',
               padding: 10,
-              margin: '10px 0',
+              marginBottom: 18,
               border: '1px solid #ccc',
               borderRadius: 4,
               outline: 'none',
@@ -80,7 +83,8 @@ const Login = () => {
               borderRadius: 4,
               cursor: 'pointer',
               fontSize: '1rem',
-              fontWeight: 600
+              fontWeight: 600,
+              marginBottom: 2
             }}
           >
             Entrar

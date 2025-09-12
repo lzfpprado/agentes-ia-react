@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import Header from './Header';
 
 const agentNames = {
   alex: 'Alex',
@@ -9,7 +10,7 @@ const agentNames = {
 
 
 const agentColors = {
-  alex: '#ff9800', // laranja
+  alex: '#8e24aa', // roxo
   sofia: '#1b6ea8',
   carlos: '#2e8b57',
 };
@@ -17,6 +18,10 @@ const agentColors = {
 function ChatPage() {
   const { agenteId } = useParams();
   const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem('auth');
+    navigate('/login');
+  };
   const [messages, setMessages] = useState([
     { sender: 'ia', text: 'Olá! Como posso ajudar?' },
   ]);
@@ -51,21 +56,23 @@ function ChatPage() {
   };
 
   return (
-    <div style={{ maxWidth: 520, margin: '40px auto', background: '#fff', borderRadius: 12, boxShadow: '0 2px 16px #0001', display: 'flex', flexDirection: 'column', height: '70vh' }}>
-      <div style={{ padding: '18px 24px', borderBottom: '1px solid #eee', display: 'flex', alignItems: 'center', gap: 12, justifyContent: 'space-between' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div style={{ width: 36, height: 36, borderRadius: '50%', background: agentColors[agenteId] || '#888', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 18 }}>
-            {agentNames[agenteId]?.[0] || '?'}
+    <>
+      <Header onLogout={handleLogout} />
+      <div style={{ maxWidth: 520, margin: '40px auto', background: '#fff', borderRadius: 12, boxShadow: '0 2px 16px #0001', display: 'flex', flexDirection: 'column', height: '70vh' }}>
+        <div style={{ padding: '18px 24px', borderBottom: '1px solid #eee', display: 'flex', alignItems: 'center', gap: 12, justifyContent: 'space-between' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+            <div style={{ width: 36, height: 36, borderRadius: '50%', background: agentColors[agenteId] || '#888', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 18 }}>
+              {agentNames[agenteId]?.[0] || '?'}
+            </div>
+            <div style={{ fontWeight: 700, fontSize: 18, color: '#333' }}>{agentNames[agenteId] || 'Agente'}</div>
           </div>
-          <div style={{ fontWeight: 700, fontSize: 18, color: '#333' }}>{agentNames[agenteId] || 'Agente'}</div>
-        </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-          <div style={{ color: '#2ecc40', fontSize: 13, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 6 }}>
-            <span style={{ width: 8, height: 8, background: '#2ecc40', borderRadius: '50%', display: 'inline-block' }}></span>
-            Online
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <div style={{ color: '#2ecc40', fontSize: 13, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 6 }}>
+              <span style={{ width: 8, height: 8, background: '#2ecc40', borderRadius: '50%', display: 'inline-block' }}></span>
+              Online
+            </div>
           </div>
         </div>
-      </div>
       <div style={{ flex: 1, overflowY: 'auto', padding: 24, background: '#f8f9fa', display: 'flex', flexDirection: 'column', gap: 12 }}>
         {messages.map((msg, idx) => (
           <div
@@ -104,7 +111,11 @@ function ChatPage() {
           Enviar
         </button>
       </form>
-    </div>
+      </div>
+      <div style={{position: 'fixed', left: 0, bottom: 8, width: '100vw', textAlign: 'center', fontSize: '0.78rem', color: '#bbb', letterSpacing: 1, zIndex: 9999, pointerEvents: 'none', userSelect: 'none', fontFamily: 'inherit'}}>
+        Projeto Mascote IA
+      </div>
+    </>
   );
 }
 
