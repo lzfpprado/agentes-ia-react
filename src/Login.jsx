@@ -2,9 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('admin');
+  const [password, setPassword] = useState('admin');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
@@ -28,7 +27,7 @@ const Login = () => {
   return (
     <>
       <div style={{ width: 300, margin: '100px auto', padding: 30, background: '#fff', borderRadius: 8, boxShadow: '0 0 10px #ccc' }}>
-        <h2 style={{ color: '#333', textAlign: 'center', width: '100%' }}>Central de Agentes</h2>
+  <h2 style={{ color: '#555', textAlign: 'center', width: '100%', letterSpacing: '0.1px' }}>Central de Agentes</h2>
         <form onSubmit={handleSubmit}>
           <input
             type="text"

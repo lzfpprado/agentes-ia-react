@@ -5,14 +5,13 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
   background-color: transparent;
   padding-top: 7vh;
 `;
 
 export const Title = styled.h1`
   font-size: 1.7rem;
-  color: #333;
+  color: #555;
   font-weight: 800;
   margin-bottom: 2px;
   margin-top: 0;
@@ -33,7 +32,7 @@ export const ButtonsContainer = styled.div`
   flex-direction: row;
   gap: 24px;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
@@ -46,23 +45,20 @@ export const AgentButton = styled.button`
   height: 135px;
   min-height: unset;
   background-color: #fff;
-  border: 2px solid #e0e0e0;
+  border: 1.5px solid #e0e0e0;
   border-radius: 20px;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: box-shadow 0.22s, border-color 0.22s, background 0.22s, transform 0.18s;
+  transition: border-color 0.22s;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
   text-align: left;
-  padding: 14px 16px 14px 16px;
-  gap: 6px;
+  padding: 10px 14px 10px 14px;
+  gap: 5px;
 
   &:hover {
-    transform: translateY(-2px) scale(1.025);
     border-color: #9e1b32;
-    box-shadow: 0 4px 16px rgba(158, 27, 50, 0.10);
-    background-color: #f9ecef;
   }
 `;

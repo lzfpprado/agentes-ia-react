@@ -38,7 +38,7 @@ function HomePage() {
   ];
 
   const handleAgenteClick = (agente) => {
-    alert(`Você clicou em: ${agente.nome}`);
+    navigate(`/chat/${agente.nome.toLowerCase()}`);
   };
 
   const handleLogout = () => {
@@ -61,7 +61,7 @@ function HomePage() {
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', width: '100%' }}>
                 <span style={{ display: 'flex', alignItems: 'center', marginRight: 14 }}>{agente.iconComponent}</span>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', flex: 1 }}>
-                  <div style={{ fontSize: '1.15rem', fontWeight: 700, color: '#9e1b32', lineHeight: 1.1 }}>{agente.nome}</div>
+                  <div style={{ fontSize: '1.15rem', fontWeight: 700, color: '#555', lineHeight: 1.1 }}>{agente.nome}</div>
                   <div style={{ fontSize: '1.02rem', fontWeight: 600, color: '#666', lineHeight: 1.1 }}>{agente.funcao}</div>
                 </div>
               </div>

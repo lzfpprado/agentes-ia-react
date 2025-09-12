@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 
 
 import HomePage from './containers/HomePage';
+import ChatPage from './containers/ChatPage';
 import Login from './Login';
 import PrivateRoute from './PrivateRoute';
 
@@ -23,6 +24,11 @@ function App() {
           <Route path="/" element={
             <PrivateRoute>
               <HomePage />
+            </PrivateRoute>
+          } />
+          <Route path="/chat/:agenteId" element={
+            <PrivateRoute>
+              <ChatPage />
             </PrivateRoute>
           } />
           <Route path="*" element={<Navigate to="/login" replace />} />
