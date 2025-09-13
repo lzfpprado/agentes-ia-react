@@ -40,7 +40,7 @@ const Login = () => {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 0 18px 0' }}>
           <img src="/Logo-Test.png" alt="Logo Empresa" style={{ height: 48, marginBottom: 0 }} />
         </div>
-        <h2 style={{ color: '#3b455b', textAlign: 'center', width: '100%', letterSpacing: '0.1px', fontWeight: 800, fontSize: '1.35rem', marginBottom: 38 }}>Central de Agentes</h2>
+        <h2 style={{ color: '#9e1b32', textAlign: 'center', width: '100%', letterSpacing: '0.1px', fontWeight: 800, fontSize: '1.35rem', marginBottom: 38 }}>Portal Aquifaz IA</h2>
         <form onSubmit={handleSubmit} style={{ width: '100%' }}>
           <input
             type="text"
@@ -63,8 +63,6 @@ const Login = () => {
               fontWeight: 500,
               transition: 'border-color 0.2s'
             }}
-            onFocus={e => e.target.style.borderColor = '#9e1b32'}
-            onBlur={e => e.target.style.borderColor = '#e0e0e0'}
           />
           <input
             type="password"
@@ -87,8 +85,6 @@ const Login = () => {
               fontWeight: 500,
               transition: 'border-color 0.2s'
             }}
-            onFocus={e => e.target.style.borderColor = '#9e1b32'}
-            onBlur={e => e.target.style.borderColor = '#e0e0e0'}
           />
           <button
             type="submit"
@@ -98,13 +94,14 @@ const Login = () => {
               background: '#9e1b32',
               color: '#fff',
               border: 'none',
-              borderRadius: 4,
+              borderRadius: 10,
               cursor: 'pointer',
               fontSize: '1.08rem',
               fontWeight: 700,
               marginBottom: 2,
               letterSpacing: '0.5px',
-              boxShadow: '0 2px 8px #9e1b3222'
+              boxShadow: '0 2px 8px #9e1b3222',
+              transition: 'background 0.18s, color 0.18s',
             }}
           >
             Entrar
@@ -112,7 +109,7 @@ const Login = () => {
           {error && <div style={{ color: 'red', marginTop: 10, textAlign: 'center', fontWeight: 500 }}>{error}</div>}
         </form>
       </div>
-      <div style={{position: 'fixed', left: 0, bottom: 8, width: '100vw', textAlign: 'center', fontSize: '0.78rem', color: '#bbb', letterSpacing: 1, zIndex: 9999, pointerEvents: 'none', userSelect: 'none', fontFamily: 'inherit'}}>
+      <div style={{position: 'fixed', left: 0, bottom: 8, width: '100vw', textAlign: 'center', fontSize: '0.7rem', color: '#bbb', letterSpacing: 1, zIndex: 9999, pointerEvents: 'none', userSelect: 'none', fontFamily: 'inherit'}}>
         Projeto Mascote IA
       </div>
     </>

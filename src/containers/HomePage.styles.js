@@ -1,3 +1,5 @@
+import styled from 'styled-components'
+
 export const InnerButton = styled.button`
   margin-top: 14px;
   align-self: stretch;
@@ -19,7 +21,6 @@ export const InnerButton = styled.button`
     border: 1.5px solid #007298;
   }
 `;
-import styled from 'styled-components'
 
 export const Container = styled.div`
   display: flex;
@@ -30,7 +31,7 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 1.7rem;
+  font-size: 1.35rem;
   color: #3b455b;
   font-weight: 800;
   margin-bottom: 2px;

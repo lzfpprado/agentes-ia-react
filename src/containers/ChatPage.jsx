@@ -11,8 +11,8 @@ const agentNames = {
 
 const agentColors = {
   alex: '#007298', // azul
-  sofia: '#007298', // azul
-  carlos: '#007298', // azul
+  sofia: '#007298',
+  carlos: '#007298',
 };
 
 function ChatPage() {
@@ -78,7 +78,7 @@ function ChatPage() {
             <div style={{ width: 36, height: 36, borderRadius: '50%', background: agentColors[agenteId] || '#888', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 18 }}>
               {agentNames[agenteId]?.[0] || '?'}
             </div>
-            <div style={{ fontWeight: 700, fontSize: 18, color: '#333' }}>{agentNames[agenteId] || 'Agente'}</div>
+            <div style={{ fontWeight: 700, fontSize: 18, color: '#3b455b' }}>{agentNames[agenteId] || 'Agente'}</div>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
             <div style={{ color: '#2ecc40', fontSize: 14, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 6 }}>
@@ -126,7 +126,7 @@ function ChatPage() {
         </button>
       </form>
       </div>
-      <div style={{position: 'fixed', left: 0, bottom: 8, width: '100vw', textAlign: 'center', fontSize: '0.78rem', color: '#bbb', letterSpacing: 1, zIndex: 9999, pointerEvents: 'none', userSelect: 'none', fontFamily: 'inherit'}}>
+      <div style={{position: 'fixed', left: 0, bottom: 8, width: '100vw', textAlign: 'center', fontSize: '0.7rem', color: '#bbb', letterSpacing: 1, zIndex: 9999, pointerEvents: 'none', userSelect: 'none', fontFamily: 'inherit'}}>
         Projeto Mascote IA
       </div>
     </>

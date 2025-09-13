@@ -62,8 +62,8 @@ function HomePage() {
     <>
       <Header onLogout={handleLogout} />
       <Container>
-        <Title style={{ color: '#9e1b32' }}>Central de Agentes</Title>
-  <Subtitle>Selecione um agente de IA para conversar</Subtitle>
+        <Title style={{ color: '#9e1b32' }}>Portal Aquifaz IA</Title>
+  <Subtitle>Escolha um agente para começar</Subtitle>
         <ButtonsContainer>
           {agentes.map(agente => (
             <AgentButton
@@ -146,7 +146,7 @@ function HomePage() {
           <FaEnvelope />
         </div>
       </div>
-      <div style={{position: 'fixed', left: 0, bottom: 8, width: '100vw', textAlign: 'center', fontSize: '0.78rem', color: '#bbb', letterSpacing: 1, zIndex: 9999, pointerEvents: 'none', userSelect: 'none', fontFamily: 'inherit'}}>
+      <div style={{position: 'fixed', left: 0, bottom: 8, width: '100vw', textAlign: 'center', fontSize: '0.7rem', color: '#bbb', letterSpacing: 1, zIndex: 9999, pointerEvents: 'none', userSelect: 'none', fontFamily: 'inherit'}}>
         Projeto Mascote IA
       </div>
     </>
