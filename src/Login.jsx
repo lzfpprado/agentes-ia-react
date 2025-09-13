@@ -8,8 +8,18 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.body.style.background = '#f8f9fa';
-    return () => { document.body.style.background = ''; };
+  document.body.style.background = '#f8f9fa';
+  document.body.style.backgroundImage = '';
+  document.body.style.backgroundRepeat = '';
+  document.body.style.backgroundPosition = '';
+  document.body.style.backgroundSize = '';
+    return () => {
+      document.body.style.background = '';
+      document.body.style.backgroundImage = '';
+      document.body.style.backgroundRepeat = '';
+      document.body.style.backgroundPosition = '';
+      document.body.style.backgroundSize = '';
+    };
   }, []);
 
   const handleSubmit = (e) => {
@@ -26,12 +36,12 @@ const Login = () => {
 
   return (
     <>
-      <div style={{ width: 300, margin: '100px auto', padding: 30, background: '#fff', borderRadius: 8, boxShadow: '0 0 10px #ccc' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.3rem', fontWeight: 700, color: '#9e1b32', letterSpacing: '-1px', marginBottom: 10 }}>
-          Logo Empresa
+      <div style={{ width: 340, margin: '90px auto', padding: '32px 24px 28px 24px', background: '#fff', borderRadius: 22, boxShadow: '0 4px 32px #3b455b22', display: 'flex', flexDirection: 'column', alignItems: 'center', fontFamily: 'inherit' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 0 18px 0' }}>
+          <img src="/Logo-Test.png" alt="Logo Empresa" style={{ height: 48, marginBottom: 0 }} />
         </div>
-        <h2 style={{ color: '#555', textAlign: 'center', width: '100%', letterSpacing: '0.1px' }}>Central de Agentes</h2>
-        <form onSubmit={handleSubmit}>
+        <h2 style={{ color: '#3b455b', textAlign: 'center', width: '100%', letterSpacing: '0.1px', fontWeight: 800, fontSize: '1.35rem', marginBottom: 38 }}>Central de Agentes</h2>
+        <form onSubmit={handleSubmit} style={{ width: '100%' }}>
           <input
             type="text"
             placeholder="Usuário"
@@ -42,15 +52,19 @@ const Login = () => {
               width: '100%',
               maxWidth: '100%',
               boxSizing: 'border-box',
-              padding: 10,
-              marginBottom: 12,
-              border: '1px solid #ccc',
-              borderRadius: 4,
+              padding: '14px 12px',
+              marginBottom: 14,
+              border: '1.5px solid #e0e0e0',
+              borderRadius: 10,
               outline: 'none',
+              fontSize: '1.05rem',
+              background: '#f8f9fa',
+              color: '#3b455b',
+              fontWeight: 500,
               transition: 'border-color 0.2s'
             }}
             onFocus={e => e.target.style.borderColor = '#9e1b32'}
-            onBlur={e => e.target.style.borderColor = '#ccc'}
+            onBlur={e => e.target.style.borderColor = '#e0e0e0'}
           />
           <input
             type="password"
@@ -62,34 +76,40 @@ const Login = () => {
               width: '100%',
               maxWidth: '100%',
               boxSizing: 'border-box',
-              padding: 10,
-              marginBottom: 18,
-              border: '1px solid #ccc',
-              borderRadius: 4,
+              padding: '14px 12px',
+              marginBottom: 20,
+              border: '1.5px solid #e0e0e0',
+              borderRadius: 10,
               outline: 'none',
+              fontSize: '1.05rem',
+              background: '#f8f9fa',
+              color: '#3b455b',
+              fontWeight: 500,
               transition: 'border-color 0.2s'
             }}
             onFocus={e => e.target.style.borderColor = '#9e1b32'}
-            onBlur={e => e.target.style.borderColor = '#ccc'}
+            onBlur={e => e.target.style.borderColor = '#e0e0e0'}
           />
           <button
             type="submit"
             style={{
               width: '100%',
-              padding: 10,
+              padding: '14px 0',
               background: '#9e1b32',
               color: '#fff',
               border: 'none',
-              borderRadius: 4,
+              borderRadius: 10,
               cursor: 'pointer',
-              fontSize: '1rem',
-              fontWeight: 600,
-              marginBottom: 2
+              fontSize: '1.08rem',
+              fontWeight: 700,
+              marginBottom: 2,
+              letterSpacing: '0.5px',
+              boxShadow: '0 2px 8px #9e1b3222'
             }}
           >
             Entrar
           </button>
-          {error && <div style={{ color: 'red', marginTop: 10 }}>{error}</div>}
+          {error && <div style={{ color: 'red', marginTop: 10, textAlign: 'center', fontWeight: 500 }}>{error}</div>}
         </form>
       </div>
       <div style={{position: 'fixed', left: 0, bottom: 8, width: '100vw', textAlign: 'center', fontSize: '0.78rem', color: '#bbb', letterSpacing: 1, zIndex: 9999, pointerEvents: 'none', userSelect: 'none', fontFamily: 'inherit'}}>

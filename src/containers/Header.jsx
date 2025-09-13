@@ -32,11 +32,11 @@ const Header = ({ onLogout }) => {
   return (
     <HeaderBar>
       <Logo>
-        Logo Empresa
+        <img src="/Logo-Test.png" alt="Logo Empresa" style={{ height: 36, marginRight: 8 }} />
       </Logo>
       {onLogout && (
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <span style={{ color: '#444', fontSize: '1rem', fontWeight: 500 }}>Bem-vindo, {username}</span>
+          <span style={{ color: '#3b455b', fontSize: '1rem', fontWeight: 500 }}>Bem-vindo, {username}</span>
           <button onClick={onLogout} style={{ padding: '8px 16px', background: '#9e1b32', color: '#fff', border: 'none', borderRadius: 4, cursor: 'pointer', fontWeight: 600 }}>
             Logout
           </button>

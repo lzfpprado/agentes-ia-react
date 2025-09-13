@@ -16,6 +16,20 @@ const agentColors = {
 };
 
 function ChatPage() {
+  useEffect(() => {
+    document.body.style.background = '#f8f9fa';
+    document.body.style.backgroundImage = "url('/background-login.png')";
+    document.body.style.backgroundRepeat = 'repeat-y';
+    document.body.style.backgroundPosition = 'center bottom';
+    document.body.style.backgroundSize = 'contain';
+    return () => {
+      document.body.style.background = '';
+      document.body.style.backgroundImage = '';
+      document.body.style.backgroundRepeat = '';
+      document.body.style.backgroundPosition = '';
+      document.body.style.backgroundSize = '';
+    };
+  }, []);
   const { agenteId } = useParams();
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -58,7 +72,7 @@ function ChatPage() {
   return (
     <>
       <Header onLogout={handleLogout} />
-      <div style={{ maxWidth: 520, margin: '40px auto', background: '#fff', borderRadius: 12, boxShadow: '0 2px 16px #0001', display: 'flex', flexDirection: 'column', height: '70vh' }}>
+  <div style={{ maxWidth: 800, margin: '40px auto', background: '#fff', borderRadius: 12, boxShadow: '0 2px 16px #0001', display: 'flex', flexDirection: 'column', height: '70vh' }}>
         <div style={{ padding: '18px 24px', borderBottom: '1px solid #eee', display: 'flex', alignItems: 'center', gap: 12, justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <div style={{ width: 36, height: 36, borderRadius: '50%', background: agentColors[agenteId] || '#888', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 700, fontSize: 18 }}>
@@ -85,7 +99,7 @@ function ChatPage() {
               borderTopRightRadius: msg.sender === 'user' ? 4 : 16,
               borderTopLeftRadius: msg.sender === 'user' ? 16 : 4,
               padding: '10px 16px',
-              maxWidth: 320,
+                maxWidth: '90%',
               boxShadow: msg.sender === 'user' ? '0 1px 6px #9e1b3222' : '0 1px 6px #0001',
               fontSize: 15,
             }}
