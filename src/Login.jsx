@@ -8,11 +8,11 @@ const Login = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-  document.body.style.background = '#f8f9fa';
-  document.body.style.backgroundImage = '';
-  document.body.style.backgroundRepeat = '';
-  document.body.style.backgroundPosition = '';
-  document.body.style.backgroundSize = '';
+    document.body.style.background = '';
+    document.body.style.backgroundImage = '';
+    document.body.style.backgroundRepeat = '';
+    document.body.style.backgroundPosition = '';
+    document.body.style.backgroundSize = '';
     return () => {
       document.body.style.background = '';
       document.body.style.backgroundImage = '';
@@ -98,7 +98,7 @@ const Login = () => {
               background: '#9e1b32',
               color: '#fff',
               border: 'none',
-              borderRadius: 10,
+              borderRadius: 4,
               cursor: 'pointer',
               fontSize: '1.08rem',
               fontWeight: 700,

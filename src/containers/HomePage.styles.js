@@ -1,3 +1,24 @@
+export const InnerButton = styled.button`
+  margin-top: 14px;
+  align-self: stretch;
+  background: #007298;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 24px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #00729822;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+
+  &:hover,
+  &:focus {
+    background: #fff;
+    color: #007298;
+    border: 1.5px solid #007298;
+  }
+`;
 import styled from 'styled-components'
 
 export const Container = styled.div`
@@ -49,14 +70,14 @@ export const ButtonsContainer = styled.div`
 
 export const AgentButton = styled.button`
   width: 320px;
-  height: 160px;
+  height: 248px;
   min-height: unset;
   background-color: #fff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0 2px 8px #3b455b22;
-  transition: box-shadow 0.22s;
+  transition: background 0.18s, color 0.18s;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -66,7 +87,15 @@ export const AgentButton = styled.button`
   gap: 16px;
 
   &:hover {
-    box-shadow: 0 4px 18px #9e1b3240;
+    background: #007298;
+  }
+  &:hover * {
+    color: #fff !important;
+  }
+  &:hover button {
+    background: #fff;
+    color: #007298 !important;
+    border: 1.5px solid #007298;
   }
 
   @media (max-width: 900px) {

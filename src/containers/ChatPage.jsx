@@ -10,18 +10,18 @@ const agentNames = {
 
 
 const agentColors = {
-  alex: '#8e24aa', // roxo
-  sofia: '#1b6ea8',
-  carlos: '#2e8b57',
+  alex: '#007298', // azul
+  sofia: '#007298', // azul
+  carlos: '#007298', // azul
 };
 
 function ChatPage() {
   useEffect(() => {
-    document.body.style.background = '#f8f9fa';
-    document.body.style.backgroundImage = "url('/background-login.png')";
-    document.body.style.backgroundRepeat = 'repeat-y';
-    document.body.style.backgroundPosition = 'center bottom';
-    document.body.style.backgroundSize = 'contain';
+    document.body.style.background = '';
+    document.body.style.backgroundImage = '';
+    document.body.style.backgroundRepeat = '';
+    document.body.style.backgroundPosition = '';
+    document.body.style.backgroundSize = '';
     return () => {
       document.body.style.background = '';
       document.body.style.backgroundImage = '';
@@ -81,8 +81,8 @@ function ChatPage() {
             <div style={{ fontWeight: 700, fontSize: 18, color: '#333' }}>{agentNames[agenteId] || 'Agente'}</div>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <div style={{ color: '#2ecc40', fontSize: 13, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 6 }}>
-              <span style={{ width: 8, height: 8, background: '#2ecc40', borderRadius: '50%', display: 'inline-block' }}></span>
+            <div style={{ color: '#2ecc40', fontSize: 14, fontWeight: 600, display: 'flex', alignItems: 'center', gap: 6 }}>
+              <span style={{ width: 9, height: 9, background: '#2ecc40', borderRadius: '50%', display: 'inline-block' }}></span>
               Online
             </div>
           </div>
@@ -93,14 +93,14 @@ function ChatPage() {
             key={idx}
             style={{
               alignSelf: msg.sender === 'user' ? 'flex-end' : 'flex-start',
-              background: msg.sender === 'user' ? '#9e1b32' : '#fff',
+              background: msg.sender === 'user' ? '#007298' : '#fff',
               color: msg.sender === 'user' ? '#fff' : '#333',
               borderRadius: 16,
               borderTopRightRadius: msg.sender === 'user' ? 4 : 16,
               borderTopLeftRadius: msg.sender === 'user' ? 16 : 4,
               padding: '10px 16px',
-                maxWidth: '90%',
-              boxShadow: msg.sender === 'user' ? '0 1px 6px #9e1b3222' : '0 1px 6px #0001',
+              maxWidth: '90%',
+              boxShadow: msg.sender === 'user' ? '0 1px 6px #00729822' : '0 1px 6px #0001',
               fontSize: 15,
             }}
           >
@@ -121,7 +121,7 @@ function ChatPage() {
           maxLength={inputMaxLength}
           style={{ flex: 1, border: 'none', outline: 'none', fontSize: 15, padding: 10, borderRadius: 8, background: '#f3f3f3', marginRight: 12 }}
         />
-        <button type="submit" style={{ background: '#9e1b32', color: '#fff', border: 'none', borderRadius: 8, padding: '0 22px', fontWeight: 700, fontSize: 15, cursor: 'pointer' }}>
+        <button type="submit" style={{ background: '#007298', color: '#fff', border: 'none', borderRadius: 4, padding: '0 22px', fontWeight: 700, fontSize: 15, cursor: 'pointer' }}>
           Enviar
         </button>
       </form>
