@@ -36,7 +36,7 @@ const Login = () => {
 
   return (
     <>
-      <div style={{ width: 340, margin: '90px auto', padding: '32px 24px 28px 24px', background: '#fff', borderRadius: 22, boxShadow: '0 4px 32px #3b455b22', display: 'flex', flexDirection: 'column', alignItems: 'center', fontFamily: 'inherit' }}>
+  <div style={{ width: 340, margin: '90px auto', padding: '32px 24px 28px 24px', background: '#fff', borderRadius: 8, boxShadow: '0 4px 32px #3b455b22', display: 'flex', flexDirection: 'column', alignItems: 'center', fontFamily: 'inherit' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 0 18px 0' }}>
           <img src="/Logo-Test.png" alt="Logo Empresa" style={{ height: 48, marginBottom: 0 }} />
         </div>
