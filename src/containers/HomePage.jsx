@@ -15,7 +15,22 @@ function HomePage() {
     document.body.style.backgroundRepeat = '';
     document.body.style.backgroundPosition = '';
     document.body.style.backgroundSize = '';
+
+    // Expiração de sessão por inatividade (30 min)
+    let logoutTimer;
+    const resetTimer = () => {
+      clearTimeout(logoutTimer);
+      logoutTimer = setTimeout(() => {
+        localStorage.removeItem('auth');
+        window.location.href = '/login';
+      }, 30 * 60 * 1000); // 30 minutos
+    };
+    const events = ['mousemove', 'keydown', 'mousedown', 'scroll', 'touchstart'];
+    events.forEach(event => window.addEventListener(event, resetTimer));
+    resetTimer();
     return () => {
+      events.forEach(event => window.removeEventListener(event, resetTimer));
+      clearTimeout(logoutTimer);
       document.body.style.background = '';
       document.body.style.backgroundImage = '';
       document.body.style.backgroundRepeat = '';
@@ -73,13 +88,13 @@ function HomePage() {
               <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', width: '100%', marginTop: 4 }}>
                 <span style={{ display: 'flex', alignItems: 'center', marginRight: 14 }}>{agente.iconComponent}</span>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'stretch', flex: 1 }}>
-                  <div style={{ fontSize: '1.15rem', fontWeight: 700, color: '#3b455b', lineHeight: 1.1, textAlign: 'left', marginTop: 2 }}>{agente.nome}</div>
-                  <div style={{ fontSize: '1.02rem', fontWeight: 600, color: '#3b455b', lineHeight: 1.1, textAlign: 'left' }}>{agente.funcao}</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: '#3b455b', lineHeight: 1.1, textAlign: 'left', marginTop: 2 }}>{agente.nome}</div>
+                  <div style={{ fontSize: 15, fontWeight: 600, color: '#3b455b', lineHeight: 1.1, textAlign: 'left' }}>{agente.funcao}</div>
                 </div>
               </div>
               <div
                 style={{
-                  fontSize: '0.82rem',
+                  fontSize: 15,
                   color: '#3b455b',
                   lineHeight: 1.4,
                   marginTop: 24,

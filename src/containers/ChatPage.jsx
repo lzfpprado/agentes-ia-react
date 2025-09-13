@@ -22,7 +22,22 @@ function ChatPage() {
     document.body.style.backgroundRepeat = '';
     document.body.style.backgroundPosition = '';
     document.body.style.backgroundSize = '';
+
+    // Expiração de sessão por inatividade (30 min)
+    let logoutTimer;
+    const resetTimer = () => {
+      clearTimeout(logoutTimer);
+      logoutTimer = setTimeout(() => {
+        localStorage.removeItem('auth');
+        window.location.href = '/login';
+      }, 30 * 60 * 1000); // 30 minutos
+    };
+    const events = ['mousemove', 'keydown', 'mousedown', 'scroll', 'touchstart'];
+    events.forEach(event => window.addEventListener(event, resetTimer));
+    resetTimer();
     return () => {
+      events.forEach(event => window.removeEventListener(event, resetTimer));
+      clearTimeout(logoutTimer);
       document.body.style.background = '';
       document.body.style.backgroundImage = '';
       document.body.style.backgroundRepeat = '';
@@ -102,6 +117,10 @@ function ChatPage() {
               maxWidth: '90%',
               boxShadow: msg.sender === 'user' ? '0 1px 6px #00729822' : '0 1px 6px #0001',
               fontSize: 15,
+              userSelect: msg.sender === 'ia' ? 'none' : 'auto',
+              MozUserSelect: msg.sender === 'ia' ? 'none' : 'auto',
+              WebkitUserSelect: msg.sender === 'ia' ? 'none' : 'auto',
+              msUserSelect: msg.sender === 'ia' ? 'none' : 'auto',
             }}
           >
             {msg.text}

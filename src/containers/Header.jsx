@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const HeaderBar = styled.header`
@@ -27,17 +28,20 @@ const Logo = styled.div`
 
 
 const Header = ({ onLogout }) => {
-  // Recupera nome do usuário do localStorage (ajuste conforme sua lógica de autenticação)
+  const navigate = useNavigate();
   const username = localStorage.getItem('username') || 'Usuário';
   return (
     <HeaderBar>
-      <Logo>
+      <Logo
+        onClick={() => navigate('/')}
+        style={{ cursor: 'pointer' }}
+      >
         <img src="/Logo-Test.png" alt="Logo Empresa" style={{ height: 36, marginRight: 8 }} />
       </Logo>
       {onLogout && (
         <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-          <span style={{ color: '#3b455b', fontSize: '1rem', fontWeight: 500 }}>Bem-vindo, {username}</span>
-          <button onClick={onLogout} style={{ padding: '8px 16px', background: '#9e1b32', color: '#fff', border: 'none', borderRadius: 4, cursor: 'pointer', fontWeight: 700 }}>
+          <span style={{ color: '#3b455b', fontSize: 15, fontWeight: 500 }}>Bem-vindo, {username}</span>
+          <button onClick={onLogout} style={{ padding: '8px 16px', background: '#9e1b32', color: '#fff', border: 'none', borderRadius: 4, cursor: 'pointer', fontWeight: 700, fontSize: 15 }}>
             Logout
           </button>
         </div>
